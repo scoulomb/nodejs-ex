@@ -216,7 +216,7 @@ pre {
 
 <section class='container'>
           <hgroup>
-            <h1>Welcome to your Node.js application on OpenShift</h1>
+            <h1>Welcome to this super great Node.js application on OpenShift modified by scoulomb</h1>
           </hgroup>
 
 
@@ -292,12 +292,17 @@ $ git push</pre>
                       <table style='margin-left: 20px'>
                           <tr><td>Type:</td><td><%= dbInfo.type %></td></tr>
                           <tr><td>URL:</td><td><%= dbInfo.url %></td></tr>
+				          <tr><td>OPENSHIFT_BUILD_COMMIT:</td><td><%= envBuildCommit %></td></tr>
+						  <tr><td>HOSTNAME:</td><td><%= envHostname %></td></tr>
+						  <tr><td>SCOULOMBCM1:</td><td><%= SCOULOMBCM1 %></td></tr>
+						  <tr><td>SCOULOMBCM2:</td><td><%= SCOULOMBCM2 %></td></tr>
                       </table>
                     </div>
                 <% } else { %>
                    <span class="code" id="count-value">No database configured</span>
                    </p>
                 <%} %>
+				
           </section>
         </div>
 

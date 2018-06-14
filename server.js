@@ -70,11 +70,12 @@ app.get('/', function (req, res) {
       if (err) {
         console.log('Error running count. Message:\n'+err);
       }
-      res.render('index.html', { pageCountMessage : count, dbInfo: dbDetails });
+      res.render('index.html', { pageCountMessage : count, dbInfo: dbDetails, envBuildCommit : process.env.OPENSHIFT_BUILD_COMMIT, envHostname : process.env.HOSTNAME, SCOULOMBCM1 : process.env.SCOULOMBCM1, SCOULOMBCM2 : process.env.SCOULOMBCM2});
     });
   } else {
     res.render('index.html', { pageCountMessage : null});
   }
+  
 });
 
 app.get('/pagecount', function (req, res) {
