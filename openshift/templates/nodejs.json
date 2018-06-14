@@ -21,6 +21,17 @@
       "app": "nodejs-example"
   },
   "objects": [
+	{
+      "kind": "ConfigMap",
+      "apiVersion": "v1",
+      "metadata": {
+        "name": "scoulombcm"
+      },
+      "data": {
+        "special.host": "${HOST_INPUT}",
+        "special.port": "${PORT_INPUT}"
+      }
+    }, 
     {
       "kind": "Service",
       "apiVersion": "v1",
@@ -208,6 +219,24 @@
                     }
                 },
                 "env": [
+						  {
+							"name": "SCOULOMBCM1",
+							"valueFrom": {
+							  "configMapKeyRef" : {
+								"name" : "scoulombcm",
+								"key" : "special.host"
+							  }
+							}
+						  },
+						  {
+							"name": "SCOULOMBCM2",
+							"valueFrom": {
+							  "configMapKeyRef" : {
+								"name" : "scoulombcm",
+								"key" : "special.port"
+							  }
+							}
+						  }
                 ]
               }
             ]
@@ -287,6 +316,18 @@
       "displayName": "Custom NPM Mirror URL",
       "description": "The custom NPM mirror URL",
       "value": ""
+    },
+	{
+      "name": "HOST_INPUT",
+      "displayName": "HOST_INPUT",
+      "description": "Custom host",
+      "value": "google.fr"
+    },
+    {
+      "name": "PORT_INPUT",
+      "displayName": "PORT_INPUT",
+      "description": "Custom port",
+      "value": "8080"
     }
   ]
 }
