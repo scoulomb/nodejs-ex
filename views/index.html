@@ -288,7 +288,7 @@ $ git push</pre>
                 <% if (pageCountMessage) { %>
                    <span class="code" id="count-value"><%=pageCountMessage%></span>
                    </p>
-                    <div class="code"><h3>DB Connection Info:</h3>
+                    <div class="code"><h3>DB Connection and env Info:</h3>
                       <table style='margin-left: 20px'>
                           <tr><td>Type:</td><td><%= dbInfo.type %></td></tr>
                           <tr><td>URL:</td><td><%= dbInfo.url %></td></tr>
@@ -296,11 +296,23 @@ $ git push</pre>
 						  <tr><td>HOSTNAME:</td><td><%= envHostname %></td></tr>
 						  <tr><td>SCOULOMBCM1:</td><td><%= SCOULOMBCM1 %></td></tr>
 						  <tr><td>SCOULOMBCM2:</td><td><%= SCOULOMBCM2 %></td></tr>
+						  <tr><td>SCOULOMBA:</td><td><%= SCOULOMBA %></td></tr>
+						  <tr><td>SCOULOMBB:</td><td><%= SCOULOMBB%></td></tr>
                       </table>
                     </div>
                 <% } else { %>
                    <span class="code" id="count-value">No database configured</span>
                    </p>
+				   <div class="code"><h3>Env Info:</h3>
+                      <table style='margin-left: 20px'>
+				          <tr><td>OPENSHIFT_BUILD_COMMIT:</td><td><%= envBuildCommit %></td></tr>
+						  <tr><td>HOSTNAME:</td><td><%= envHostname %></td></tr>
+						  <tr><td>SCOULOMBCM1:</td><td><%= SCOULOMBCM1 %></td></tr>
+						  <tr><td>SCOULOMBCM2:</td><td><%= SCOULOMBCM2 %></td></tr>
+						  <tr><td>SCOULOMBA:</td><td><%= SCOULOMBA %></td></tr>
+						  <tr><td>SCOULOMBB:</td><td><%= SCOULOMBB%></td></tr>
+                      </table>
+                    </div>
                 <%} %>
 				
           </section>
