@@ -70,10 +70,10 @@ app.get('/', function (req, res) {
       if (err) {
         console.log('Error running count. Message:\n'+err);
       }
-      res.render('index.html', { pageCountMessage : count, dbInfo: dbDetails, envBuildCommit : process.env.OPENSHIFT_BUILD_COMMIT, envHostname : process.env.HOSTNAME, SCOULOMBCM1 : process.env.SCOULOMBCM1, SCOULOMBCM2 : process.env.SCOULOMBCM2, SCOULOMBA : process.env.SCOULOMBA, SCOULOMBB : process.env.SCOULOMBB});
+      res.render('index.html', { pageCountMessage : count, dbInfo: dbDetails, envBuildCommit : process.env.OPENSHIFT_BUILD_COMMIT, envHostname : process.env.HOSTNAME, SCOULOMBCM1 : process.env.SCOULOMBCM1, SCOULOMBCM2 : process.env.SCOULOMBCM2, EXAMPLE_EXTERNAL_SERVICE_SERVICE_HOST : process.env.EXAMPLE_EXTERNAL_SERVICE_SERVICE_HOST, EXAMPLE_EXTERNAL_SERVICE_SERVICE_PORT : process.env.EXAMPLE_EXTERNAL_SERVICE_SERVICE_PORT});
     });
   } else {
-      res.render('index.html', { pageCountMessage : null,  envBuildCommit : process.env.OPENSHIFT_BUILD_COMMIT, envHostname : process.env.HOSTNAME, SCOULOMBCM1 : process.env.SCOULOMBCM1, SCOULOMBCM2 : process.env.SCOULOMBCM2, SCOULOMBA : process.env.SCOULOMBA, SCOULOMBB : process.env.SCOULOMBB});
+      res.render('index.html', { pageCountMessage : null,  envBuildCommit : process.env.OPENSHIFT_BUILD_COMMIT, envHostname : process.env.HOSTNAME, SCOULOMBCM1 : process.env.SCOULOMBCM1, SCOULOMBCM2 : process.env.SCOULOMBCM2, EXAMPLE_EXTERNAL_SERVICE_SERVICE_HOST : process.env.EXAMPLE_EXTERNAL_SERVICE_SERVICE_HOST, EXAMPLE_EXTERNAL_SERVICE_SERVICE_PORT : process.env.EXAMPLE_EXTERNAL_SERVICE_SERVICE_PORT});
   }
   
 });
